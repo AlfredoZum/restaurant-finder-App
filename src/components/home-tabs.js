@@ -33,8 +33,6 @@ function HomeTabs( props ) {
   const index = props.tab.index;
   const routes = props.tab.routes;
 
-  console.log( routes )
-
   return (
     <BottomNavigation
       barStyle={styles.bottomNavigation}
