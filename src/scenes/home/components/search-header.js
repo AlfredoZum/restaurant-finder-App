@@ -16,12 +16,6 @@ function SearchHeader(){
   );
 }
 
-// <TextInput style={styles.input}/>
-
-/*
-
-*/
-
 const styles = StyleSheet.create({
   container: {
     height: 55,
@@ -31,7 +25,6 @@ const styles = StyleSheet.create({
 
   },
   searchContainer: {
-    //width: '100%',
     flex: 9,
     backgroundColor: '#EDEDED',
     borderRadius: 20,

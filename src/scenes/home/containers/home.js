@@ -4,6 +4,7 @@ import {View, Text} from 'react-native';
 import SearchHeader from '../components/search-header';
 
 function Home() {
+
   return (
     <View>
       <SearchHeader></SearchHeader>

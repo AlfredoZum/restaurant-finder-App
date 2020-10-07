@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
+import {selected_tab} from '../store/actions/homeTabBar.action';
+import {connect} from 'react-redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import { BottomNavigation, Text } from 'react-native-paper';
@@ -12,25 +14,32 @@ const RecentsRoute = () => <Text>Recents</Text>;
 
 const Tab = createMaterialBottomTabNavigator();
 
-function HomeTabs() {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'home', title: 'Home', icon: 'home'},
-    { key: 'albums', title: 'Albums', icon: 'home' },
-    { key: 'recents', title: 'Recents', icon: 'account' },
-  ]);
+function HomeTabs( props ) {
+
+  _handleIndexChange = index => {
+    props.tab.index = index;
+    props.selected_tab(index);
+  }
+
+  //const [index, setIndex] = React.useState(0);
+  //const [routes] = React.useState(props.tab.routes);
 
   const renderScene = BottomNavigation.SceneMap({
     home: Home,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
+    offers: AlbumsRoute,
+    account: RecentsRoute,
   });
+
+  const index = props.tab.index;
+  const routes = props.tab.routes;
+
+  console.log( routes )
 
   return (
     <BottomNavigation
       barStyle={styles.bottomNavigation}
       navigationState={{ index, routes }}
-      onIndexChange={setIndex}
+      onIndexChange={_handleIndexChange}
       renderScene={renderScene}
       //shifting={true}
     />
@@ -43,4 +52,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeTabs;
+const mapStateToProps = state => {
+  return {tab: state.homeTab}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+      selected_tab : (index) => {
+          console.log( index, 'indexxx' )
+          return dispatch(selected_tab(index));
+      }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeTabs);
