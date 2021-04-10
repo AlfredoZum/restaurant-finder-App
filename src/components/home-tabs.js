@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
-import {selected_tab} from '../store/actions/homeTabBar.action';
-import {connect} from 'react-redux';
+import { StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import { BottomNavigation, Text } from 'react-native-paper';
+import selectedTab from '../store/actions/homeTabBar.action';
 
 import Home from '../scenes/home/containers/home';
 
@@ -14,12 +14,11 @@ const RecentsRoute = () => <Text>Recents</Text>;
 
 const Tab = createMaterialBottomTabNavigator();
 
-function HomeTabs( props ) {
-
-  _handleIndexChange = index => {
+function HomeTabs(props) {
+  _handleIndexChange = (index) => {
     props.tab.index = index;
-    props.selected_tab(index);
-  }
+    props.selectedTab(index);
+  };
 
   //const [index, setIndex] = React.useState(0);
   //const [routes] = React.useState(props.tab.routes);
@@ -46,21 +45,21 @@ function HomeTabs( props ) {
 
 const styles = StyleSheet.create({
   bottomNavigation: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
 });
 
-const mapStateToProps = state => {
-  return {tab: state.homeTab}
-}
+const mapStateToProps = (state) => {
+  return { tab: state.homeTab };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-      selected_tab : (index) => {
-          console.log( index, 'indexxx' )
-          return dispatch(selected_tab(index));
-      }
-  }
-}
+    selectedTab: (index) => {
+      console.log(index, 'indexxx');
+      return dispatch(selectedTab(index));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeTabs);
