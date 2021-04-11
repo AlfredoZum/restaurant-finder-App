@@ -13,7 +13,7 @@ import { primaryColor, grayColor } from '../../../utils/colors';
 
 const styles = StyleSheet.create({
   scrollView: {
-    marginBottom: 200,
+    marginBottom: 220,
     marginTop: 8,
   },
   restaurantContainer: {
@@ -76,7 +76,6 @@ function Restaurant(props) {
   const prop = props;
   const { restaurant } = prop;
 
-  // const image = uri( nameImage );
   const ratings = `(${restaurant.ratings} ratings)`;
   const price = `· ${restaurant.price}`;
 

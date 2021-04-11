@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     flexDirection: 'row',
     padding: 10,
+    backgroundColor: '#FFFFFF',
   },
   searchContainer: {
     flex: 9,

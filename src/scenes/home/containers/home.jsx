@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import SearchHeader from '../components/search-header';
 import Categories from '../components/categories';
 import ListRestaurant from '../components/list-restaurant';
+import LocationHeader from '../components/location-header';
 
 import {
   avocado,
@@ -96,6 +97,7 @@ function Home() {
 
   return (
     <View>
+      <LocationHeader />
       <SearchHeader />
       <Categories categories={categories} />
       <ListRestaurant restaurants={restaurants} />
