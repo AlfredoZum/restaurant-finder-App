@@ -11,6 +11,9 @@ import { ColorLens, VerticalAlignCenter } from '@material-ui/icons';
 import { pink } from '@material-ui/core/colors'; */
 
 const styles = StyleSheet.create({
+  container: {
+    height: 120,
+  },
   categoryContainer: {
     height: 70,
     width: 70,
@@ -37,7 +40,7 @@ const indexText = (index) => index;
 function Categories(props) {
   const prop = props;
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView style={styles.container} horizontal showsHorizontalScrollIndicator={false}>
       {prop.categories.map((category, index) => (
         <Category key={indexText(index)} category={category} />
       ))}
