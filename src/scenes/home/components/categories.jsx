@@ -12,7 +12,8 @@ import { pink } from '@material-ui/core/colors'; */
 
 const styles = StyleSheet.create({
   container: {
-    height: 130,
+    height: 150,
+    paddingBottom: 12,
     backgroundColor: '#FFFFFF',
   },
   categoryContainer: {

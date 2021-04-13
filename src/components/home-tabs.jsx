@@ -37,6 +37,7 @@ function HomeTabs(props) {
 
   return (
     <BottomNavigation
+      keyboardHidesNavigationBar={false}
       barStyle={styles.bottomNavigation}
       navigationState={{ index, routes }}
       onIndexChange={handleIndexChange}

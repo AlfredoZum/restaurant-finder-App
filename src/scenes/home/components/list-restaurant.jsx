@@ -13,7 +13,7 @@ import { primaryColor, grayColor } from '../../../utils/colors';
 
 const styles = StyleSheet.create({
   scrollView: {
-    marginBottom: 220,
+    marginBottom: 275,
     marginTop: 8,
   },
   restaurantContainer: {
