@@ -6,8 +6,7 @@ import { BottomNavigation, Text } from 'react-native-paper';
 import selectedTab from '../store/actions/homeTabBar.action';
 
 import Home from '../scenes/home/containers/home';
-
-const AlbumsRoute = () => <Text>Albums</Text>;
+import Offers from '../scenes/offers/containers/offers';
 
 const RecentsRoute = () => <Text>Recents</Text>;
 
@@ -23,7 +22,7 @@ function HomeTabs(props) {
 
   const renderScene = BottomNavigation.SceneMap({
     home: Home,
-    offers: AlbumsRoute,
+    offers: Offers,
     account: RecentsRoute,
   });
 
