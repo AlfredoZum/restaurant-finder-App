@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 
 function NavigationComponent(props) {
   const prop = props;
-  const headerShown = prop.tab.index !== 1;
+  const headerShown = prop.tab.index === 0;
   return (
     <NavigationContainer>
       <Stack.Navigator>

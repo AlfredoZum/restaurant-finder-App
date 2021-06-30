@@ -2,13 +2,12 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-import { BottomNavigation, Text } from 'react-native-paper';
+import { BottomNavigation } from 'react-native-paper';
 import selectedTab from '../store/actions/homeTabBar.action';
 
 import Home from '../scenes/home/containers/home';
 import Offers from '../scenes/offers/containers/offers';
-
-const RecentsRoute = () => <Text>Recents</Text>;
+import Account from '../scenes/account/containers/account';
 
 function HomeTabs(props) {
   const prop = props;
@@ -23,7 +22,7 @@ function HomeTabs(props) {
   const renderScene = BottomNavigation.SceneMap({
     home: Home,
     offers: Offers,
-    account: RecentsRoute,
+    account: Account,
   });
 
   const styles = StyleSheet.create({
